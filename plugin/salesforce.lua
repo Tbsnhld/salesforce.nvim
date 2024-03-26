@@ -16,6 +16,26 @@ local Debug = require("salesforce.debug")
 
 Debug:log("salesforce.lua", "Initializing Salesforce plugin commands...")
 
+-- create callable shortcuts
+
+local nmap = function(keys, func, desc)
+    if desc then
+        desc = '[Sf] ' .. desc
+    end
+    vim.keymap.set('n', keys, func, { buffer = true, desc = desc})
+end
+
+
+nmap('<leader>', Anon.execute_anon(), "Execute file in anonymous apex")
+nmap('<leader>', Testrunner.execute_current_method(), "Run currently selected test method")
+nmap('<leader>', Testrunner.execute_current_class(), "Run currently selected test class")
+nmap('<leader>', FileManager.push_to_org(), "Push current file to org")
+nmap('<leader>', FileManager.pull_from_org(), "Retrieve current file from org")
+nmap('<leader>', Diff.diff_with_org(), "Diff file against org")
+
+
+
+--create callable commands
 vim.api.nvim_create_user_command("SalesforceExecuteFile", function()
     Anon.execute_anon()
 end, {})
