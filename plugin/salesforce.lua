@@ -26,12 +26,12 @@ local nmap = function(keys, func, desc)
 end
 
 
-nmap('<leader>', Anon.execute_anon(), "Execute file in anonymous apex")
-nmap('<leader>', Testrunner.execute_current_method(), "Run currently selected test method")
-nmap('<leader>', Testrunner.execute_current_class(), "Run currently selected test class")
-nmap('<leader>', FileManager.push_to_org(), "Push current file to org")
-nmap('<leader>', FileManager.pull_from_org(), "Retrieve current file from org")
-nmap('<leader>', Diff.diff_with_org(), "Diff file against org")
+nmap('<leader>sea', Anon.execute_anon(), "Execute file in anonymous apex")
+nmap('<leader>st', Testrunner.execute_current_method(), "Run currently selected test method")
+nmap('<leader>sT', Testrunner.execute_current_class(), "Run currently selected test class")
+nmap('<leader>sp', FileManager.push_to_org(), "Push current file to org")
+nmap('<leader>sr', FileManager.pull_from_org(), "Retrieve current file from org")
+nmap('<leader>sD', Diff.diff_with_org(), "Diff file against org")
 
 
 
